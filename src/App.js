@@ -26,8 +26,7 @@ const deleteRow = (rowindex) => {
     <div className="App">
 
     <TodoList  inputChanged = {inputChanged} addTodo = {addTodo} desc = {desc}/>
-    <TodoTable  listItems = {listItems} deleteRow ={deleteRow}/>
-    
+    <TodoTable  listItems = {listItems}  deleteRow ={deleteRow} />
     </div>
   );
 }
