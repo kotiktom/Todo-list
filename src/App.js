@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
+import TodoTable from './components/TodoTable'
+import TodoList from './components/TodoList'
 
 function App() {
 
@@ -22,18 +24,10 @@ const deleteRow = (rowindex) => {
 
   return (
     <div className="App">
-     
-     <form onSubmit={addTodo}>
-   Description:  <input type="text" name="desc" value={desc.desc} onChange={inputChanged}/>
-   Date: <input type="text" name="date" value={desc.date} onChange={inputChanged}/>
-    <input type="Submit" value="add"/>
-    </form>
-    <table><tbody><th>Date</th><th>Description</th>{
-      listItems.map((item, rowindex) => 
-    <tr key ={rowindex}>
       
-      <td>{item.date}</td><td>{item.desc}</td><button onClick={()=> {deleteRow(rowindex)}} >Delete</button>
-    </tr>)}</tbody></table>
+    <TodoList  inputChanged = {inputChanged} addTodo = {addTodo} desc = {desc} listItems = {listItems}/>
+    <TodoTable  listItems = {listItems} deleteRow ={deleteRow}/>
+    
     </div>
   );
 }
