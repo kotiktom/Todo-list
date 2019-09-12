@@ -17,8 +17,7 @@ const inputChanged = (event) => {
 }
 
 const deleteRow = (rowindex) => {
-const newTodo = listItems.filter((listItems, i) => i !== rowindex)
-  setListItems(newTodo);
+  setListItems(listItems.filter((listItems, i) => i !== rowindex))
 }
 
   return (
